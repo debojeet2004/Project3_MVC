@@ -1,8 +1,8 @@
 const express = require('express');
-const UserRouter = require('./routes/UserRouter');
-const {ConnectDataBase} = require('./Connect_Config');
+const {ConnectDataBase} = require('./Connect_Config');      // Data base connection
+const UserRouter = require('./routes/UserRouter');          // Router for the User
+const {log_req_res} = require('./middleware/middleware');   // Middleware for logging the request and response 
 
-const {log_req_res} = require('./middleware/middleware');
 const app = express();
 const port=8000; // PORT for the server
 

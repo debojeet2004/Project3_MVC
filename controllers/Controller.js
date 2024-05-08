@@ -1,6 +1,8 @@
 const User_Model = require('../models/userModel')
 
 
+
+// GET ALL USERS DATA 
 async function handel_getAll_User(req, res) {
     User_Model.find({})
         .then((users) => {
@@ -12,7 +14,7 @@ async function handel_getAll_User(req, res) {
         });
 }
 
-
+// ADD NEW USER DATA
 async function handel_add_User(req, res) {
     const body = req.body;
     console.log(body);
@@ -32,6 +34,8 @@ async function handel_add_User(req, res) {
         res.status(500).json({ error: "Server Error" });
     }
 }
+
+// GET USER BY ID
 async function handel_getUserby_id(req, res) {
     const user = await User_Model.findById(req.params.id);
     if(!user) {
@@ -40,7 +44,7 @@ async function handel_getUserby_id(req, res) {
     return res.json(user)
 }
 
-
+// DELETE USER BY ID
 async function handel_deleteUserById(req, res) {
     try {
         const user = await User_Model.findById(req.params.id);
@@ -55,6 +59,8 @@ async function handel_deleteUserById(req, res) {
     }
 }
 
+
+// UPDATE USER BY ID
 async function handel_updateUserById(req, res) {
     const body = req.body;
     // console.log(body);
