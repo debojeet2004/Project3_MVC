@@ -17,9 +17,5 @@ app.use(log_req_res)
 // CONFIGERING THE ROUTES
 app.use("/users", UserRouter)
 
-
-
-
-
 // STARTING THE SERVER
 app.listen(port, () => console.log(`Server started 😃 at http://localhost:${port}`));

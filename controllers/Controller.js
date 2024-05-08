@@ -87,4 +87,3 @@ module.exports = {
     handel_deleteUserById,
     handel_updateUserById
 }
-
